@@ -1,0 +1,73 @@
+body {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.song-card {
+    position: relative;
+    width: 250px;
+    height: 350px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.25);
+    transition: box-shadow 200ms;
+    color: white;
+    user-select: none;
+}
+
+.song-card::before{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    background-image: linear-gradient(to top, black 0%, transparent 40%);
+}
+.song-card:hover {
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.35);
+
+}
+
+.song-card .song-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.song-card .song-card-info {
+    z-index: 5;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+.song-card .song-card-artist {
+    font-size: 1em;
+    font-weight: bold;
+    list-style: 1.2em;
+}
+
+.song-card .song-card-album {
+    font-size: .7em;
+    line-height: 1em;
+}
+
+.song-card .song-card-title {
+    font-size: 1.3em;
+    line-height: 1.5em;
+}
+
+.song-card-artist,
+.song-card-album,
+.song-card-title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
